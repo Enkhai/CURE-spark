@@ -1,0 +1,65 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.4.2 (Ubuntu Java 11.0.9)
+[debug] Load.defaultLoad until apply took 3893.379247ms
+[debug]           Load.loadUnit: plugins took 377.487325ms
+[debug]           Load.loadUnit: defsScala took 0.438775ms
+[debug] [Loading] Scanning directory /home/ozzy/IdeaProjects/test/project
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /home/ozzy/IdeaProjects/test/project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 97.125553 ms
+[debug]               Load.resolveProject(test-build) took 1847.367909ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id test-build, base: /home/ozzy/IdeaProjects/test/project, plugins: List(<none>))) took 2054.161406ms
+[debug] [Loading] Done in /home/ozzy/IdeaProjects/test/project, returning: (test-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 2165.152787ms
+[debug]           Load.loadUnit: cleanEvalClasses took 0.26348ms
+[debug]         Load.loadUnit(file:/home/ozzy/IdeaProjects/test/project/, ...) took 2563.970707ms
+[debug]       Load.apply: load took 3783.717972ms
+[debug]       Load.apply: resolveProjects took 6.699541ms
+[debug]       Load.apply: finalTransforms took 499.770143ms
+[debug]       Load.apply: config.delegates took 7.959768ms
+[debug]       Load.apply: Def.make(settings)... took 3756.343984ms
+[debug]       Load.apply: structureIndex took 614.258886ms
+[debug]       Load.apply: mkStreams took 5.5711ms
+[info] loading project definition from /home/ozzy/IdeaProjects/test/project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 17080.618036ms
+[debug]     Load.loadUnit: defsScala took 0.007363ms
+[debug] [Loading] Scanning directory /home/ozzy/IdeaProjects/test
+[debug]       Load.loadUnit: mkEval took 187.55888ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /home/ozzy/IdeaProjects/test, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 32.186257 ms
+[info] loading settings for project test from build.sbt ...
+[debug]         Load.resolveProject(test) took 44.233968ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id test, base: /home/ozzy/IdeaProjects/test, plugins: List(<none>))) took 77.199672ms
+[debug] [Loading] Done in /home/ozzy/IdeaProjects/test, returning: (test)
+[debug]     Load.loadUnit: loadedProjectsRaw took 19113.671284ms
+[debug]     Load.loadUnit: cleanEvalClasses took 34.222243ms
+[debug]   Load.loadUnit(file:/home/ozzy/IdeaProjects/test/, ...) took 36231.86382ms
+[debug] Load.apply: load took 36325.396491ms
+[debug] Load.apply: resolveProjects took 0.103832ms
+[debug] Load.apply: finalTransforms took 98.163546ms
+[debug] Load.apply: config.delegates took 0.397483ms
+[debug] Load.apply: Def.make(settings)... took 786.363115ms
+[debug] Load.apply: structureIndex took 179.999982ms
+[debug] Load.apply: mkStreams took 0.002745ms
+[info] set current project to demo (in build file:/home/ozzy/IdeaProjects/test/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(shell, None, None)
+[info] sbt server started at local:///home/ozzy/.sbt/1.0/server/583a0cbaf84cf4ac7082/sock

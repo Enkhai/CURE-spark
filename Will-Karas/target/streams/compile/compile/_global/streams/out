@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala:39:13: value save is not a member of org.apache.spark.rdd.RDD[Int][0m[0J
+[0m[[0m[31merror[0m] [0m[0mpredictions.save(sc, outputDir)[0m[0J
+[0m[[0m[31merror[0m] [0m[0m            ^[0m[0J
+[0m[[0m[31merror[0m] [0m[0mone error found[0m[0J

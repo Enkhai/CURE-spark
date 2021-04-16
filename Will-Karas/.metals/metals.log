@@ -1,0 +1,1534 @@
+[0m2021.04.16 00:21:44 INFO  Started: Metals version 0.10.1 in workspace 'C:\Users\gmixo\Desktop\test' for client vscode 1.55.2.[0m
+[0m2021.04.16 00:21:45 INFO  time: initialize in 0.34s[0m
+[0m2021.04.16 00:21:45 INFO  Attempting to connect to the build server...[0m
+[0m2021.04.16 00:21:45 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol tcp --port 36335'...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+[0m2021.04.16 00:21:48 INFO  no build target: using presentation compiler with only scala-library: 2.12.13[0m
+Waiting for the bsp connection to come up...
+[0m2021.04.16 00:21:50 INFO  running 'C:\Program Files\Java\jdk1.8.0_281\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\gmixo\AppData\Local\Temp\metals7400669802855839380\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'[0m
+[0m2021.04.16 00:21:50 INFO  time: code lens generation in 4.24s[0m
+[0m2021.04.16 00:21:50 ERROR [info] waiting for lock on C:\Users\gmixo\.sbt\boot\sbt.boot.lock to be available...[0m
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+[0m2021.04.16 00:21:52 WARN  no build target for: C:\Users\gmixo\Desktop\test\build.sbt[0m
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+[0m2021.04.16 00:22:15 INFO  sbt bloopInstall exit: 2[0m
+[0m2021.04.16 00:22:15 INFO  time: ran 'sbt bloopInstall' in 25s[0m
+[0m2021.04.16 00:22:15 ERROR sbt command failed: C:\Program Files\Java\jdk1.8.0_281\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\gmixo\AppData\Local\Temp\metals7400669802855839380\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall[0m
+[0m2021.04.16 00:22:15 INFO  Attempting to connect to the build server...[0m
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol tcp --port 11719'...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+error: Giving up on waiting for a connection, printing embedded bloop logs:
+> No server running at 127.0.0.1:8212, let's fire one...
+> Resolving ch.epfl.scala:bloop-frontend_2.12:1.4.8...
+error: The launcher failed to establish a bsp connection, aborting...
+[0m2021.04.16 00:22:33 ERROR Failed to connect with build server, no functionality will work.
+java.lang.RuntimeException: The server did not start, got FailedToOpenBspConnection
+	at bloop.launcher.LauncherMain.failPromise$1(Launcher.scala:95)
+	at bloop.launcher.LauncherMain.runLauncher(Launcher.scala:122)
+	at scala.meta.internal.metals.BloopServers$$anon$1.run(BloopServers.scala:159)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[0m
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+No server running at 127.0.0.1:8212, let's fire one...
+Resolving ch.epfl.scala:bloop-frontend_2.12:1.4.8...
+Starting bloop server at 127.0.0.1:8212...
+Attempting a connection to the server...
+[0m[32m[D][0m Waiting for a connection at 127.0.0.1:11719...
+The server is listening for incoming connections at tcp://127.0.0.1:11719...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+[0m2021.04.16 00:22:53 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\gmixo\AppData\Local\scalameta\metals\cache\bsp.trace.json[0m
+[0m2021.04.16 00:22:53 INFO  time: Connected to build server in 38s[0m
+[0m2021.04.16 00:22:53 INFO  Connected to Build server: Bloop v1.4.8[0m
+[0m2021.04.16 00:22:53 ERROR Empty build targets. Expected at least one build target identifier.[0m
+[0m2021.04.16 00:22:53 ERROR Empty build targets. Expected at least one build target identifier.[0m
+[0m2021.04.16 00:22:53 ERROR Empty build targets. Expected at least one build target identifier.[0m
+[0m2021.04.16 00:22:55 INFO  time: indexed workspace in 1.08s[0m
+[0m2021.04.16 00:22:55 WARN  no build target for: C:\Users\gmixo\Desktop\test\build.sbt[0m
+[0m2021.04.16 00:22:55 INFO  no build target: using presentation compiler with only scala-library: 2.12.13[0m
+[0m2021.04.16 00:24:28 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+Exception in thread "pool-4-thread-1" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1155)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:195)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	... 2 more
+[0m2021.04.16 00:26:41 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+??? 16, 2021 12:26:41 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+[0m2021.04.16 00:26:45 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+??? 16, 2021 12:26:45 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:26:45 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:26:46 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:26:50 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:26:52 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:26:55 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:26:56 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: expected class or object definition def
+  def main(args: Array[String]): Unit = {
+  ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+[0m2021.04.16 00:26:57 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+??? 16, 2021 12:26:57 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.syntaxErrorExpected(ScalametaParser.scala:852)
+	at scala.meta.internal.parsers.ScalametaParser.accept(ScalametaParser.scala:858)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSep(ScalametaParser.scala:867)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSepOpt(ScalametaParser.scala:871)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4832)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:26:57 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.syntaxErrorExpected(ScalametaParser.scala:852)
+	at scala.meta.internal.parsers.ScalametaParser.accept(ScalametaParser.scala:858)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSep(ScalametaParser.scala:867)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSepOpt(ScalametaParser.scala:871)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4832)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:26:57 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.syntaxErrorExpected(ScalametaParser.scala:852)
+	at scala.meta.internal.parsers.ScalametaParser.accept(ScalametaParser.scala:858)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSep(ScalametaParser.scala:867)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSepOpt(ScalametaParser.scala:871)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4832)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:27:08 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.syntaxErrorExpected(ScalametaParser.scala:852)
+	at scala.meta.internal.parsers.ScalametaParser.accept(ScalametaParser.scala:858)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSep(ScalametaParser.scala:867)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSepOpt(ScalametaParser.scala:871)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4832)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:27:10 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.syntaxErrorExpected(ScalametaParser.scala:852)
+	at scala.meta.internal.parsers.ScalametaParser.accept(ScalametaParser.scala:858)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSep(ScalametaParser.scala:867)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSepOpt(ScalametaParser.scala:871)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4832)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:27:12 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.syntaxErrorExpected(ScalametaParser.scala:852)
+	at scala.meta.internal.parsers.ScalametaParser.accept(ScalametaParser.scala:858)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSep(ScalametaParser.scala:867)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSepOpt(ScalametaParser.scala:871)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4832)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:27:12 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:27: error: ; expected but : found
+  class main(args: Array[String]): Unit = {
+                                 ^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.syntaxErrorExpected(ScalametaParser.scala:852)
+	at scala.meta.internal.parsers.ScalametaParser.accept(ScalametaParser.scala:858)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSep(ScalametaParser.scala:867)
+	at scala.meta.internal.parsers.ScalametaParser.acceptStatSepOpt(ScalametaParser.scala:871)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4832)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+[0m2021.04.16 00:27:17 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+??? 16, 2021 12:27:17 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+[0m2021.04.16 00:27:19 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+??? 16, 2021 12:27:19 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:27:20 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:27:20 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:27:20 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:27:23 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:27:33 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:27:38 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:27:39 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:28:41 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:28:42 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:28:43 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:28:43 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:28:43 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:28:49 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:28:52 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:28:52 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:28:54 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:28:54 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:29:00 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:29:02 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+??? 16, 2021 12:29:02 ?? scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+file%3A%2F%2F%2FC%3A%2FUsers%2Fgmixo%2FDesktop%2Ftest%2Fsrc%2Fmain%2Fscala%2Freviews.scala:5: error: expected class or object definition val
+val data = sc.textFile("data/mllib/kmeans_data.txt")
+^
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:16)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.Reporter.syntaxError(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter.syntaxError$(Reporter.scala:17)
+	at scala.meta.internal.parsers.Reporter$$anon$1.syntaxError(Reporter.scala:22)
+	at scala.meta.internal.parsers.ScalametaParser.statSeq(ScalametaParser.scala:4831)
+	at scala.meta.internal.parsers.ScalametaParser.topStatSeq(ScalametaParser.scala:4838)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$batchSource$1(ScalametaParser.scala:5052)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.batchSource(ScalametaParser.scala:5018)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$source$1(ScalametaParser.scala:5001)
+	at scala.meta.internal.parsers.ScalametaParser.atPos(ScalametaParser.scala:817)
+	at scala.meta.internal.parsers.ScalametaParser.autoPos(ScalametaParser.scala:833)
+	at scala.meta.internal.parsers.ScalametaParser.source(ScalametaParser.scala:5000)
+	at scala.meta.internal.parsers.ScalametaParser.entrypointSource(ScalametaParser.scala:5006)
+	at scala.meta.internal.parsers.ScalametaParser.$anonfun$parseSource$2(ScalametaParser.scala:142)
+	at scala.meta.internal.parsers.ScalametaParser.parseRule(ScalametaParser.scala:52)
+	at scala.meta.internal.parsers.ScalametaParser.parseSource(ScalametaParser.scala:142)
+	at scala.meta.parsers.Parse$.$anonfun$parseSource$1(Parse.scala:29)
+	at scala.meta.internal.parsers.ScalametaParser$$anon$257.apply(ScalametaParser.scala:5063)
+	at scala.meta.parsers.Api$XtensionParseDialectInput.parse(Api.scala:25)
+	at scala.meta.internal.semanticdb.scalac.ParseOps$XtensionCompilationUnitSource.toSource(ParseOps.scala:17)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:201)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+[0m2021.04.16 00:29:04 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 00:30:23 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 00:30:57 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 00:31:38 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 00:31:41 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 00:32:09 INFO  time: code lens generation in 5.26s[0m
+[0m2021.04.16 00:32:10 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+??? 16, 2021 12:32:11 ?? org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 382
+??? 16, 2021 12:32:12 ?? org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+[0m2021.04.16 00:32:14 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+??? 16, 2021 12:32:16 ?? org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+[0m2021.04.16 00:32:39 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+??? 16, 2021 12:32:39 ?? org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 401
+??? 16, 2021 12:32:40 ?? org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 404
+[0m2021.04.16 00:33:00 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 00:33:15 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+Exception in thread "pool-4-thread-2" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1155)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:195)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	... 2 more
+[0m2021.04.16 00:36:02 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 00:37:03 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 00:37:56 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 00:41:16 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 00:42:33 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+??? 16, 2021 12:43:18 ?? org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 928
+??? 16, 2021 12:58:09 ?? org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1046
+[0m2021.04.16 00:58:28 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 01:05:35 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 01:07:01 INFO  time: code lens generation in 1.46s[0m
+[0m2021.04.16 01:08:37 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 01:09:24 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 01:10:59 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+??? 16, 2021 1:12:00 ?? org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+[0m2021.04.16 01:12:14 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 01:12:36 INFO  time: code lens generation in 5.92s[0m
+[0m2021.04.16 01:12:36 INFO  time: code lens generation in 2.68s[0m
+??? 16, 2021 1:12:38 ?? org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1266
+??? 16, 2021 1:12:38 ?? org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1270
+[0m2021.04.16 01:12:40 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+??? 16, 2021 1:13:44 ?? org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1278
+??? 16, 2021 1:14:06 ?? org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1291
+??? 16, 2021 1:14:06 ?? org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1295
+[0m2021.04.16 01:18:22 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.16 01:32:22 INFO  shutting down Metals[0m
+[0m2021.04.16 01:32:23 INFO  Shut down connection with build server.[0m
+No more data in the client stdin, exiting...
+No more data in the server stdin, exiting...
+[0m2021.04.17 01:37:55 INFO  Started: Metals version 0.10.1 in workspace 'C:\Users\gmixo\Desktop\test' for client vscode 1.55.2.[0m
+[0m2021.04.17 01:37:55 INFO  time: initialize in 0.35s[0m
+[0m2021.04.17 01:37:55 INFO  Attempting to connect to the build server...[0m
+[0m2021.04.17 01:37:55 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.17 01:37:56 INFO  skipping build import with status 'Failed'[0m
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol tcp --port 22018'...
+Waiting for the bsp connection to come up...
+Waiting for the bsp connection to come up...
+[0m2021.04.17 01:37:58 INFO  no build target: using presentation compiler with only scala-library: 2.12.13[0m
+Waiting for the bsp connection to come up...
+[0m2021.04.17 01:38:00 INFO  time: code lens generation in 4.13s[0m
+[0m2021.04.17 01:38:00 INFO  time: code lens generation in 4.22s[0m
+Waiting for the bsp connection to come up...
+No server running at 127.0.0.1:8212, let's fire one...
+Resolving ch.epfl.scala:bloop-frontend_2.12:1.4.8...
+Starting bloop server at 127.0.0.1:8212...
+Attempting a connection to the server...
+[0m[32m[D][0m Waiting for a connection at 127.0.0.1:22018...
+The server is listening for incoming connections at tcp://127.0.0.1:22018...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+[0m2021.04.17 01:38:02 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\gmixo\AppData\Local\scalameta\metals\cache\bsp.trace.json[0m
+[0m2021.04.17 01:38:02 INFO  Attempting to connect to the build server...[0m
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol tcp --port 21087'...
+Waiting for the bsp connection to come up...
+[0m[32m[D][0m Waiting for a connection at 127.0.0.1:21087...
+The server is listening for incoming connections at tcp://127.0.0.1:21087...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+[0m2021.04.17 01:38:03 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\gmixo\AppData\Local\scalameta\metals\cache\bsp.trace.json[0m
+No more data in the client stdin, exiting...
+[0m2021.04.17 01:38:23 ERROR Timeout waiting for 'build/initialize' response[0m
+[0m2021.04.17 01:38:23 WARN  Retrying connection to the build server Bloop[0m
+Starting the bsp launcher for bloop...
+Opening a bsp server connection with 'bsp --protocol tcp --port 38704'...
+Waiting for the bsp connection to come up...
+No more data in the server stdin, exiting...
+[0m[32m[D][0m Waiting for a connection at 127.0.0.1:38704...
+The server is listening for incoming connections at tcp://127.0.0.1:38704...
+Starting thread that pumps stdin and redirects it to the bsp server...
+Starting thread that pumps server stdout and redirects it to the client stdout...
+[0m2021.04.17 01:38:23 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\gmixo\AppData\Local\scalameta\metals\cache\bsp.trace.json[0m
+[0m2021.04.17 01:38:26 INFO  time: Connected to build server in 30s[0m
+[0m2021.04.17 01:38:26 INFO  Connected to Build server: Bloop v1.4.8[0m
+[0m2021.04.17 01:38:26 ERROR Empty build targets. Expected at least one build target identifier.[0m
+[0m2021.04.17 01:38:26 ERROR Empty build targets. Expected at least one build target identifier.[0m
+[0m2021.04.17 01:38:26 ERROR Empty build targets. Expected at least one build target identifier.[0m
+[0m2021.04.17 01:38:27 INFO  time: indexed workspace in 0.55s[0m
+[0m2021.04.17 01:38:27 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.17 01:38:28 INFO  no build target: using presentation compiler with only scala-library: 2.12.12[0m
+[0m2021.04.17 01:38:38 INFO  time: code lens generation in 8.33s[0m
+[0m2021.04.17 01:38:47 WARN  no build target for: C:\Users\gmixo\Desktop\test\src\main\scala\reviews.scala[0m
+[0m2021.04.17 01:38:47 INFO  shutting down Metals[0m
+[0m2021.04.17 01:38:47 INFO  Shut down connection with build server.[0m
+[0m2021.04.17 01:38:47 INFO  Shut down connection with build server.[0m
+No more data in the client stdin, exiting...
+No more data in the server stdin, exiting...
+No more data in the client stdin, exiting...
+No more data in the server stdin, exiting...
