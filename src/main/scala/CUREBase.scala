@@ -1,5 +1,6 @@
 import org.apache.log4j._
 import org.apache.spark.{SparkConf, SparkContext}
+import clustering.cure.CureClustering
 
 object CUREBase {
 
@@ -16,18 +17,17 @@ object CUREBase {
     val inputDir = "file://" + currentDir + "/datasets/data_size1"
     val outputDir = "file://" + currentDir + "/output"
 
-    //TODO: load data points
+    val numClusters = 4
+    var points = sc.textFile(inputDir + "/*", numClusters)
+      .map(_.split(","))
+      .map(_.map(_.toDouble))
 
     val timeBefore = System.nanoTime()
 
-    //TODO: partition data points
+    val cureClf = new CureClustering()
+    val result = cureClf.fitPredict(points)
 
-    //TODO: run algorithm
-
-    // dummy RDD - to be replaced by actual result
-    var result = sc.parallelize(Array[Array[Double]](Array[Double](0, 1)))
-
-    result.map(_.mkString(",")).saveAsTextFile(outputDir)
+    result.map(x => (x._1.mkString(",") + x._2.toString)).saveAsTextFile(outputDir)
 
     print("######### Time taken for CURE clustering #########\n")
     print((System.nanoTime - timeBefore) / 1e9d)

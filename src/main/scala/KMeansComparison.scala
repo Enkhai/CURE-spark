@@ -10,15 +10,15 @@ object KMeansComparison {
 
     val sparkConf = new SparkConf()
       .setMaster("local[4]")
-      .setAppName("HighestDominance")
+      .setAppName("KMeansComparison")
 
     val sc = new SparkContext(sparkConf)
 
     val currentDir = System.getProperty("user.dir")
-    val data = "file://" + currentDir + "/datasets/data1.txt"
+    val inputDir = "file://" + currentDir + "/datasets/data_size1"
     val outputDir = "file://" + currentDir + "/output"
 
-    val parsedData = sc.textFile(data).map(s => Vectors.dense(s.split(',').map(_.toDouble))).cache()
+    val parsedData = sc.textFile(inputDir).map(s => Vectors.dense(s.split(',').map(_.toDouble))).cache()
 
     // Cluster the data into two classes using KMeans
     val numClusters = 2
