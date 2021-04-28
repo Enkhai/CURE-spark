@@ -4,6 +4,8 @@ class Cluster(point: Array[Double]) {
   var centroid: Array[Double] = point
   var left: Cluster = _
   var right: Cluster = _
+  var closest: Cluster = _
+  var closestDistance: Double = _
 
   def this(l: Cluster, r: Cluster) {
     this(null)
