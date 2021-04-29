@@ -1,6 +1,6 @@
 import org.apache.log4j._
 import org.apache.spark.{SparkConf, SparkContext}
-import clustering.cure.CureClustering
+import clustering.cure.CureClustering__
 
 object CUREBase {
 
@@ -24,7 +24,7 @@ object CUREBase {
 
     val timeBefore = System.nanoTime()
 
-    val cureClf = new CureClustering()
+    val cureClf = new CureClustering__()
     val result = cureClf.fitPredict(points)
 
     result.map(x => (x._1.mkString(",") + x._2.toString)).saveAsTextFile(outputDir)

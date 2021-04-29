@@ -1,20 +1,20 @@
 package clustering.cure
 
 import org.apache.spark.rdd.RDD
-import clustering.agglomerative.{AgglomerativeClustering, Cluster}
-import clustering.Misc.euclideanDistance
+import clustering.agglomerative__.{AgglomerativeClustering__, Cluster__}
+import clustering.Distance.euclideanDistance
 
 import scala.collection.mutable.ArrayBuffer
 
-class CureClustering(numClusters: Int = 5, shrinkingFactor: Double = 0.2, sampleSize: Int = 10000,
-                     numRepresentatives: Int = 10) {
+class CureClustering__(numClusters: Int = 5, shrinkingFactor: Double = 0.2, sampleSize: Int = 10000,
+                       numRepresentatives: Int = 10) {
 
   validateArgs()
 
   def fitPredict(rdd: RDD[Array[Double]]): RDD[(Array[Double], Int)] = {
     val sample = rdd.takeSample(withReplacement = false, sampleSize)
 
-    val clusters = new AgglomerativeClustering(numClusters).fitPredict(sample)
+    val clusters = new AgglomerativeClustering__(numClusters).fitPredict(sample)
     var representativeClusters = findRepresentatives(clusters)
 
     representativeClusters = representativeClusters
@@ -39,7 +39,7 @@ class CureClustering(numClusters: Int = 5, shrinkingFactor: Double = 0.2, sample
     )
   }
 
-  private def findRepresentatives(clusters: Array[(Cluster, Int)]): Array[(Array[Array[Double]], Int)] = {
+  private def findRepresentatives(clusters: Array[(Cluster__, Int)]): Array[(Array[Array[Double]], Int)] = {
     val representatives = new Array[ArrayBuffer[Array[Double]]](numClusters)
     for (i <- clusters.indices) {
       val cluster_points = clusters(i)._1.getPoints

@@ -1,13 +1,13 @@
-package clustering.agglomerative
+package clustering.agglomerative__
 
-class Cluster(point: Array[Double]) {
+class Cluster__(point: Array[Double]) {
   var centroid: Array[Double] = point
-  var left: Cluster = _
-  var right: Cluster = _
-  var closest: Cluster = _
+  var left: Cluster__ = _
+  var right: Cluster__ = _
+  var closest: Cluster__ = _
   var closestDistance: Double = _
 
-  def this(l: Cluster, r: Cluster) {
+  def this(l: Cluster__, r: Cluster__) {
     this(null)
     left = l
     right = r

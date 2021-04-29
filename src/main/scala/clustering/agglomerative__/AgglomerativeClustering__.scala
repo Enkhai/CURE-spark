@@ -1,21 +1,21 @@
-package clustering.agglomerative
+package clustering.agglomerative__
 
-import clustering.Misc.euclideanDistance
+import clustering.Distance.euclideanDistance
 
-class AgglomerativeClustering(numClusters: Int) {
+class AgglomerativeClustering__(numClusters: Int) {
 
   validateArgs()
 
   // Implements Average-Linkage technique
-  def fitPredict(X: Array[Array[Double]]): Array[(Cluster, Int)] = {
+  def fitPredict(X: Array[Array[Double]]): Array[(Cluster__, Int)] = {
     // Create an ArrayBuffer containing a cluster for each point
-    val clusters = X.map(x => new Cluster(x)).toBuffer
+    val clusters = X.map(x => new Cluster__(x)).toBuffer
 
     // Calculate closest points and closest cluster distances for each point (cluster)
     // Cluster closest and closest distances are initially null and we have to make them
     for (i <- clusters.indices) {
       var closestDist = Double.MaxValue
-      var closest: Cluster = null
+      var closest: Cluster__ = null
       for (j <- i + 1 until(clusters.length)) {
         val currDist = euclideanDistance(clusters(i).centroid, clusters(j).centroid)
         if (currDist < closestDist) {
@@ -35,12 +35,12 @@ class AgglomerativeClustering(numClusters: Int) {
       val right = left.closest
 
       // Create the new cluster and drop the old ones from the buffer
-      val newCluster = new Cluster(left, right)
+      val newCluster = new Cluster__(left, right)
       clusters -= (left, right)
 
       // Find the closest cluster and closest cluster distance for the new cluster
       var newClosestDist = Double.MaxValue
-      var newClosest: Cluster = null
+      var newClosest: Cluster__ = null
       for (i <- clusters.indices) {
         val newCurrDist = euclideanDistance(clusters(i).centroid, newCluster.centroid)
         if (newCurrDist < newClosestDist) {
