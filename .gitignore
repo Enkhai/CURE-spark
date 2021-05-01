@@ -1,5 +1,5 @@
 /project/target
 /target
 .idea
-output
+output*/
 .ipynb_checkpoints

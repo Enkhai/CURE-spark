@@ -1,149 +1,146 @@
 package clustering.structures
 
-import clustering.Distance.euclideanDistanceSquared
+case class KDTree(var root: KDNode, k: Int) {
 
-class KDTree {
+  def newNode(point: KDPoint): KDNode = KDNode(point, null, null)
 
-  var root: KDNode = _
-  var numDims: Int = _
+  def insert(point: KDPoint): KDNode = insertRec(this.root, point, 0)
 
-  def this(numDims: Int) {
-    this
-    this.numDims = numDims
-  }
-
-  def this(root: KDNode) {
-    this
-    this.root = root
-    this.numDims = root.point.length
-  }
-
-  def this(points: Array[Array[Double]]) {
-    this
-    this.numDims = points(0).length
-    this.root = new KDNode(points(0))
-
-    for (i <- 1 until points.length) {
-      this.root.add(new KDNode(points(i)))
+  def insertRec(node: KDNode, point: KDPoint, depth: Int): KDNode = {
+    if (node == null) newNode(point: KDPoint)
+    else {
+      val axis = depth % k
+      if (point.dimensions(axis) < node.point.dimensions(axis)) node.left = insertRec(node.left, point, depth + 1)
+      else if (matchPoints(node.point, point)) {
+        node.point.cluster = point.cluster
+        node.deleted = false
+      }
+      else node.right = insertRec(node.right, point, depth + 1)
+      node
     }
   }
 
-  def add(props: Array[Double]): Unit =
-    add(new KDNode(props))
-
-  def add(node: KDNode): Unit = {
-    if (this.root == null)
-      this.root = node
-    else
-      root.add(node)
+  def matchPoints(point1: KDPoint, point2: KDPoint): Boolean = {
+    val p1 = point1.dimensions
+    val p2 = point2.dimensions
+    !p1.indices.exists(i => p1(i) != p2(i))
   }
 
-  def remove(props: Array[Double]): Unit = {
-    remove(new KDPoint(props))
+  def search(point: KDPoint): Boolean = searchRec(this.root, point, 0)
+
+  def searchRec(node: KDNode, point: KDPoint, depth: Int): Boolean = {
+    if (node == null) false
+    else {
+      if (matchPoints(node.point, point)) {
+        if (!node.deleted) true
+        else false
+      }
+      else {
+        val axis = depth % k
+        if (point.dimensions(axis) < node.point.dimensions(axis))
+          searchRec(node.left, point, depth + 1)
+        else
+          searchRec(node.right, point, depth + 1)
+      }
+    }
   }
 
-  def remove(point: KDPoint): Unit = {
-    this.root = remove(this.root, point, 0)
+  def delete(point: KDPoint): KDNode = {
+    deleteRec(this.root, point, 0)
   }
 
-  def remove(root: KDNode, point: KDPoint, depth: Int): KDNode = {
-    if (root == null)
-      return null
+  def deleteRec(node: KDNode, point: KDPoint, depth: Int): KDNode = {
+    if (node != null) {
+      val axis = depth % k
+      if (matchPoints(node.point, point)) {
+        node.deleted = true
+      }
+      else {
+        if (point.dimensions(axis) < node.point.dimensions(axis)) node.left = deleteRec(node.left, point, depth + 1)
+        else node.right = deleteRec(node.right, point, depth + 1)
+      }
+    }
+    node
+  }
 
-    val currDim = depth % this.numDims
+  def copyPoint(p1: KDPoint, p2: KDPoint): Unit = {
+    val d1 = p1.dimensions
+    val d2 = p2.dimensions
+    d1.indices.foreach(i => d1(i) = d2(i))
+  }
 
-    if (root.point.equals(point)) {
-      if (root.right != null) {
-        val min = findMin(root.right, currDim)
-        root.point = min.point
-        root.right = remove(root.right, min.point, depth + 1)
-      } else if (root.left != null) {
-        val min = findMin(root.left, currDim)
-        root.point = min.point
-        root.right = remove(root.left, min.point, depth + 1)
-      } else
-        return null
-      return root
+  def findMinRec(root: KDNode, d: Int, depth: Int): KDNode = {
+    if (root == null) null
+    else {
+      val axis = depth % k
+
+      if (axis == d) {
+        if (root.left == null) root
+        else findMinRec(root.left, d, depth + 1)
+      }
+      else {
+        minNode(root, findMinRec(root.left, d, depth + 1), findMinRec(root.right, d, depth + 1), d)
+      }
+    }
+  }
+
+  def findMin(node: KDNode, d: Int): KDNode = findMinRec(node, d, 0)
+
+  def minNode(x: KDNode, y: KDNode, z: KDNode, d: Int): KDNode = {
+    val res = {
+      if (y != null && y.point.dimensions(d) < x.point.dimensions(d)) y
+      else x
+    }
+    if (z != null && z.point.dimensions(d) < res.point.dimensions(d)) z
+    else res
+  }
+
+  def closestPointOfOtherCluster(point: KDPoint): KDPoint = {
+    val c = closestRec(this.root, point, 0)
+    if (c == null) null
+    else c.point
+  }
+
+  def closestRec(node: KDNode, point: KDPoint, depth: Int): KDNode =
+    if (node == null)
+      null
+    else {
+      val axis = depth % k
+      if (point.cluster == node.point.cluster) {
+        closerDistance(point, closestRec(node.left, point, depth + 1), closestRec(node.right, point, depth + 1))
+      }
+      else if (point.dimensions(axis) < node.point.dimensions(axis)) {
+        val best = {
+          if (node.deleted)
+            closestRec(node.left, point, depth + 1)
+          else
+            closerDistance(point, closestRec(node.left, point, depth + 1), node)
+        }
+        if (best == null) closerDistance(point, closestRec(node.right, point, depth + 1), best)
+        else if (point.squaredDistance(best.point) > Math.abs(point.dimensions(axis)) - node.point.dimensions(axis))
+          closerDistance(point, closestRec(node.right, point, depth + 1), best)
+        else best
+      }
+      else {
+        val best = {
+          if (node.deleted) closestRec(node.right, point, depth + 1)
+          else closerDistance(point, closestRec(node.right, point, depth + 1), node)
+        }
+        if (best == null) closerDistance(point, closestRec(node.left, point, depth + 1), best)
+        else if (point.squaredDistance(best.point) > Math.pow(point.dimensions(axis) - node.point.dimensions(axis), 2))
+          closerDistance(point, closestRec(node.left, point, depth + 1), best)
+        else best
+      }
     }
 
-    if (point.props(depth) < root.point.props(depth))
-      root.left = remove(root.left, point, depth + 1)
-    else
-      root.right = remove(root.right, point, depth + 1)
-
-    root
-  }
-
-  def findMin(root: KDNode, dim: Int): KDNode = {
-    findMin(root, dim, 0)
-  }
-
-  def findMin(root: KDNode, dim: Int, depth: Int): KDNode = {
-    if (root == null)
-      return null
-
-    val currDim = depth % this.numDims
-    if (currDim == dim) {
-      if (root.left == null)
-        return root
-      return findMin(root.left, dim, depth + 1)
+  def closerDistance(pivot: KDPoint, n1: KDNode, n2: KDNode): KDNode = {
+    if (n1 == null) n2
+    else if (n2 == null) n1
+    else {
+      val d1 = pivot.squaredDistance(n1.point)
+      val d2 = pivot.squaredDistance(n2.point)
+      if (d1 < d2) n1
+      else n2
     }
-
-    minNode(root, findMin(root.left, dim, depth + 1), findMin(root.right, dim, depth + 1), dim)
   }
-
-  def minNode(x: KDNode, y: KDNode, z: KDNode, dim: Int): KDNode = {
-    var min = x
-    if (y != null && y.point.props(dim) < min.point.props(dim))
-      min = y
-    if (z != null && z.point.props(dim) < min.point.props(dim))
-      min = z
-    min
-  }
-
-  def nearestNeighbor(props: Array[Double]): KDNode =
-    nearestNeighbor(new KDPoint(props))
-
-  def nearestNeighbor(target: KDPoint): KDNode =
-    nearestNeighbor(this.root, target, 0)
-
-  private def nearestNeighbor(root: KDNode, target: KDPoint, depth: Int): KDNode = {
-    if (root == null)
-      return null
-
-    var nextBranch: KDNode = null
-    var otherBranch: KDNode = null
-
-    if (target.get(depth) < root.point.get(depth)) {
-      nextBranch = root.left
-      otherBranch = root.right
-    } else {
-      nextBranch = root.right
-      otherBranch = root.left
-    }
-
-    var temp = nearestNeighbor(nextBranch, target, depth + 1)
-    var best = closest(temp, root, target)
-
-    val radiusSquared = euclideanDistanceSquared(target.props, best.point.props)
-    val dist = target.get(depth) - root.point.get(depth)
-
-    if (radiusSquared >= dist * dist) {
-      temp = nearestNeighbor(otherBranch, target, depth + 1)
-      best = closest(temp, best, target)
-    }
-
-    best
-  }
-
-  def closest(n0: KDNode, n1: KDNode, target: KDPoint): KDNode = {
-    if (n0 == null) return n1
-    if (n1 == null) return n0
-
-    if (euclideanDistanceSquared(n0.point.props, target.props) < euclideanDistanceSquared(n1.point.props, target.props))
-      n0
-    else
-      n1
-  }
-
 }

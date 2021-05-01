@@ -1,112 +1,78 @@
 package clustering.structures
 
-class MinHeap {
-  var heap: Array[Cluster] = _
-  var maxSize: Int = _
-  var size: Int = _
+case class MinHeap(maxSize: Int) {
+  private val data = new Array[Cluster](maxSize)
+  private var size  = -1
 
-  val FRONT: Int = 1
-
-  def this(n: Int) {
-    this
-    heap = new Array[Cluster](n + 1)
-    maxSize = n
-    size = 0
-  }
-
-  def parent(key: Int): Int =
-    key / 2
-
-  def left(key: Int): Int =
-    2 * key
-
-  def right(key: Int): Int =
-    2 * key + 1
-
-  def isLeaf(key: Int): Boolean = {
-    if (key >= (size / 2) && key <= size)
-      return true
-    false
-  }
-
-  def swap(fpos: Int, spos: Int): Unit = {
-    val tmp: Cluster = heap(fpos)
-    heap(fpos) = heap(spos)
-    heap(spos) = tmp
-  }
-
-  def minHeapify(key: Int): Unit = {
-    if (isLeaf(key))
-      return
-
-    val leftChild = left(key)
-    val rightChild = right(key)
-
-    var smallestChild = leftChild
-    if (rightChild <= size && heap(rightChild).closestDistance < heap(leftChild).closestDistance)
-      smallestChild = rightChild
-    if (heap(key).closestDistance > heap(smallestChild).closestDistance) {
-      swap(key, smallestChild)
-      minHeapify(smallestChild)
-    }
-  }
-
-  def insert(cluster: Cluster): Boolean = {
-
-    if (size >= maxSize)
-      return false
-
+  def insert(cluster:Cluster):Unit = {
     size += 1
-    heap(size) = cluster
-    var current = size
+    data(size) = cluster
+    percolateUp(size)
+  }
 
-    while (current > 1 && heap(current).closestDistance < heap(parent(current)).closestDistance) {
-      swap(current, parent(current))
-      current = parent(current)
+  def takeHead(): Cluster = {
+
+    val head = data(0)
+    data(0) = data(size)
+    data(size) = null
+    size-=1
+    percolateDown(0)
+    head
+  }
+
+  def update(index: Int, cluster: Cluster): Unit = {
+    data(index) = cluster
+    heapify(index)
+  }
+
+  def remove(index:Int):Unit = {
+    data(index) = data(size)
+    size-=1
+    heapify(index)
+  }
+
+  def heapify(index: Int): Unit = {
+
+    val parentI = index /2
+    val lChild = index*2
+    val rChild = lChild +1
+
+    if(parentI > 0 && (data(parentI).squaredDistance > data(index).squaredDistance)) percolateUp(index)
+    else percolateDown(index)
+  }
+
+  def getDataArray : Array[Cluster] = data
+  def heapSize : Int = this.size + 1
+
+  def percolateUp(curr: Int): Unit = {
+    val pi = curr/2
+    if(data(pi).squaredDistance > data(curr).squaredDistance){
+      val tmp =data(pi)
+      data(pi)=  data(curr)
+      data(curr) = tmp
+      percolateUp(pi)
     }
-    true
   }
 
-  def delete(cluster: Cluster): Unit = {
-    var key = heap.indexOf(cluster)
+  def percolateDown(curr: Int) : Unit= {
 
-    heap(key).closestDistance = Int.MinValue
-    while (key > 1 && heap(key).closestDistance < heap(parent(key)).closestDistance) {
-      swap(key, parent(key))
-      key = parent(key)
+    val lChild = curr*2
+    val rChild = lChild +1
+
+    var min = {
+      if(lChild <= size && data(lChild).squaredDistance < data(curr).squaredDistance) lChild
+      else curr
     }
-    extractMin()
-  }
+    min = {
+      if(rChild <= size && data(rChild).squaredDistance < data(min).squaredDistance) rChild
+      else min
+    }
 
-  def relocate(cluster: Cluster): Unit = {
-    var key = heap.indexOf(cluster)
-    if (heap(key).closestDistance == cluster.closestDistance)
-      return
-    if (heap(key).closestDistance < cluster.closestDistance) {
-      heap(key) = cluster
-      minHeapify(key)
-    } else {
-      heap(key) = cluster
-      while (key > 1 && heap(key).closestDistance < heap(parent(key)).closestDistance) {
-        swap(key, parent(key))
-        key = parent(key)
-      }
-      extractMin()
+    if(min != curr){
+      val tmp = data(min)
+      data(min) = data(curr)
+      data(curr) = tmp
+      percolateDown(min)
     }
   }
-
-  def minHeap(): Unit = {
-    for (i <- (size / 2) to 1)
-      minHeapify(i)
-  }
-
-  def extractMin(): Cluster = {
-    val popped = heap(FRONT)
-    heap(FRONT) = heap(size)
-    size -= 1
-    minHeapify(FRONT)
-    popped
-  }
-
-  def getMin: Cluster = heap(FRONT)
 }

@@ -1,18 +1,9 @@
 package clustering.structures
 
-import scala.collection.mutable.ArrayBuffer
+case class Cluster(points: Array[KDPoint],
+                   var representatives: Array[KDPoint],
+                   var nearest: Cluster,
+                   var mean: KDPoint,
+                   var squaredDistance: Double = 0.0d,
+                   var id: Int = 0)
 
-class Cluster(point: Array[Double], c: Int) {
-  var points: ArrayBuffer[Array[Double]] = ArrayBuffer[Array[Double]](point)
-  var centroid: Array[Double] = point
-  var representatives: Array[Array[Double]] = new Array[Array[Double]](c)
-  representatives(0) = point
-  var closest: Cluster = _
-  var closestDistance: Double = Double.MaxValue
-
-  def merge(b:Cluster): Cluster = {
-
-    // TODO: Implement merge
-
-  }
-}

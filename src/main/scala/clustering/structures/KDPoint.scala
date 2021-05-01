@@ -1,20 +1,22 @@
 package clustering.structures
 
-class KDPoint(p: Array[Double]) {
-  var props: Array[Double] = p
+case class KDPoint(dimensions: Array[Double],
+                 var cluster: Cluster = null) {
 
-  def get(depth: Int): Double =
-    this.props(depth % this.props.length)
-
-  def length: Int =
-    this.props.length
-
-  def equals(point: KDPoint): Boolean = {
-    if (point.length != this.length)
-      return false
-    for (i <- 0 until this.length)
-      if (point.props(i) != this.props(i))
-        return false
-    true
+  def distance(p: KDPoint): Double = {
+    Math.sqrt(squaredDistance(p))
   }
+
+  def squaredDistance(p: KDPoint): Double = {
+    val d1 = this.dimensions
+    val d2 = p.dimensions
+    d1.indices.foldLeft(0.0d) { (l, r) => l + Math.pow(d1(r) - d2(r), 2) }
+  }
+
+  override def equals(obj: scala.Any): Boolean = {
+    !obj.asInstanceOf[KDPoint].dimensions.indices.exists(i => this.dimensions(i) != obj.asInstanceOf[KDPoint].dimensions(i))
+  }
+
+  override def toString: String = dimensions.toList.toString()
 }
+
