@@ -1,15 +1,5 @@
 name := "CURE-spark"
 version := "0.1"
-scalaVersion := "2.11.5"
-libraryDependencies += "org.apache.spark" %% "spark-core" % "2.2.1"
-libraryDependencies += "org.apache.spark" %% "spark-streaming" % "2.2.1"
-libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.2.1"
-libraryDependencies += "org.apache.spark" %% "spark-mllib" % "2.2.1"
-libraryDependencies += "org.apache.spark" %% "spark-hive" % "2.2.1"
-libraryDependencies += "org.apache.spark" %% "spark-graphx" % "2.2.1"
-libraryDependencies += "org.apache.spark" %% "spark-yarn" % "2.2.0"
-//libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.6"
-
-
-//libraryDependencies += "org.apache.spark" %% "spark-sql" % "3.0.1"
-//libraryDependencies += "org.apache.spark" %% "spark-mllib" % "3.0.1"
+scalaVersion := "2.12.8"
+libraryDependencies += "org.apache.spark" %% "spark-sql" % "3.0.1"
+libraryDependencies += "org.apache.spark" %% "spark-mllib" % "3.0.1"
