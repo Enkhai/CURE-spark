@@ -77,7 +77,7 @@ case class MinHeap(maxSize: Int) {
       min = lChild
     if (rChild <= size &&
       data(rChild).squaredDistance < data(min).squaredDistance)
-      min = lChild
+      min = rChild
 
     if (min != curr) {
       swap(min, curr)

@@ -9,65 +9,52 @@ object CureAlgorithm {
 
   def start(cureArgs: CureArgs, sparkContext: SparkContext): RDD[(Array[Double], Int)] = {
 
-    // read data
     val distFile = sparkContext.textFile(cureArgs.inputFile)
       .map(_
         .split(",")
         .map(_.toDouble)
       )
 
-    // sample the data
     val sample = distFile
       .sample(withReplacement = false, fraction = cureArgs.samplingRatio)
       .repartition(cureArgs.partitions)
     println(s"The total size is ${distFile.count()} and sampled count is ${sample.count()}")
 
-    // create a new cluster for each point
     val points = sample.map(a => {
       val p = KDPoint(a)
       p.cluster = Cluster(Array(p), Array(p), null, p)
       p
     }).cache()
 
-    // broadcast needed variables for creating the clusters
-    val broadcastVariables = (sparkContext.broadcast(cureArgs.clusters),
-      sparkContext.broadcast(cureArgs.representatives),
+    val broadcastVariables = (sparkContext.broadcast(cureArgs.numClusters),
+      sparkContext.broadcast(cureArgs.numRepresentatives),
       sparkContext.broadcast(cureArgs.shrinkingFactor),
       sparkContext.broadcast(cureArgs.removeOutliers))
 
-    // make the clusters
     val clusters = points.mapPartitions(partition => cluster(partition, broadcastVariables))
       .collect()
+    println(s"Partitioned Execution finished Successfully. Collected all ${clusters.length} clusters at driver.")
 
-    println(s"Partitioned Execution finished Successfully. Collected all ${clusters.length} clusters at driver")
-
-    // all representatives should reference their cluster
-    clusters.foreach(c => c.representatives.foreach(a => {
-      if (a != null) a.cluster = c
-    }))
-
-    // gather the representative points and build a tree and a heap anew
     val reducedPoints = clusters.flatMap(_.representatives).toList
-    val kdTree: KDTree = createKDTree(reducedPoints)
-    val cHeap: MinHeap = createHeapFromClusters(clusters.toList, kdTree)
+    val kdTree = createKDTree(reducedPoints)
+    val cHeap = createHeapFromClusters(clusters.toList, kdTree)
 
-    // count the number of clusters not satisfying the desired number of representatives
     var clustersShortOfMReps =
       if (cureArgs.removeOutliers)
-        clusters.count(_.representatives.length < cureArgs.representatives)
+        clusters.count(_.representatives.length < cureArgs.numRepresentatives)
       else
         0
 
     // trim all clusters having less than the desired number of representatives
-    while (cHeap.heapSize - clustersShortOfMReps > cureArgs.clusters) {
+    while (cHeap.heapSize - clustersShortOfMReps > cureArgs.numClusters) {
       val c1 = cHeap.takeHead()
       val nearest = c1.nearest
-      val c2 = mergeClusterWithPointsAndRep(c1, nearest, cureArgs.representatives, cureArgs.shrinkingFactor)
+      val c2 = merge(c1, nearest, cureArgs.numRepresentatives, cureArgs.shrinkingFactor)
 
       if (cureArgs.removeOutliers) {
-        val a = nearest.representatives.length < cureArgs.representatives
-        val b = c1.representatives.length < cureArgs.representatives
-        val c = c2.representatives.length < cureArgs.representatives
+        val a = nearest.representatives.length < cureArgs.numRepresentatives
+        val b = c1.representatives.length < cureArgs.numRepresentatives
+        val c = c2.representatives.length < cureArgs.numRepresentatives
 
         if (a && b && c) clustersShortOfMReps = clustersShortOfMReps - 1
         else if (a && b) clustersShortOfMReps = clustersShortOfMReps - 2
@@ -77,40 +64,39 @@ object CureAlgorithm {
       c1.representatives.foreach(kdTree.delete)
       nearest.representatives.foreach(kdTree.delete)
 
-      val representArray = c2.representatives
-      val (newNearestCluster, nearestDistance) = getNearestCluster(representArray, kdTree)
+      val (newNearestCluster, nearestDistance) = getNearestCluster(c2, kdTree)
       c2.nearest = newNearestCluster
       c2.squaredDistance = nearestDistance
 
-      representArray.foreach(kdTree.insert)
+      c2.representatives.foreach(kdTree.insert)
       removeClustersFromHeapUsingReps(kdTree, cHeap, c1, nearest)
       cHeap.insert(c2)
-      println(s"Processing and merging clusters. Heap size is :: ${cHeap.heapSize}")
+      println(s"Processing and merging clusters. Heap size is ${cHeap.heapSize}")
     }
     println(s"Merged clusters at driver.\n" +
       s"  Total clusters ${cHeap.heapSize}\n" +
-      s"  Removed $clustersShortOfMReps clusters without $cureArgs.representatives representatives")
-
+      s"  Removed $clustersShortOfMReps clusters without ${cureArgs.numRepresentatives} representatives")
 
     val finalClusters = cHeap.getDataArray
       .slice(0, cHeap.heapSize)
-      .filter(_.representatives.length >= cureArgs.representatives)
+      .filter(_.representatives.length >= cureArgs.numRepresentatives)
     finalClusters.zipWithIndex
       .foreach { case (x, i) => x.id = i }
+
     println("Final Representatives")
     finalClusters
       .foreach(c =>
         c.representatives
           .foreach(r => println(s"$r , ${c.id}"))
       )
-    val broadcastTree = sparkContext.broadcast(kdTree)
-    println("Broadcasting kdTree from driver to executors")
 
-    distFile.mapPartitions(partn => {
-      val kdTreeAtEx = broadcastTree.value
-      partn.map(p => {
-        val readPoint = KDPoint(p)
-        (p, kdTreeAtEx.closestPointOfOtherCluster(readPoint).cluster.id)
+    val broadcastTree = sparkContext.broadcast(kdTree)
+    distFile.mapPartitions(partition => {
+      partition.map(p => {
+        (p, broadcastTree.value
+          .closestPointOfOtherCluster(KDPoint(p))
+          .cluster
+          .id)
       })
     })
   }
@@ -121,41 +107,40 @@ object CureAlgorithm {
                         Broadcast[Double],
                         Broadcast[Boolean])): Iterator[Cluster] = {
 
-    val (clusters, representatives, shrinkingFactor, removeOutliers) = broadcasts
+    val (numClusters, numRepresentatives, shrinkingFactor, removeOutliers) = broadcasts
 
     val partitionList = partition.toList
 
-    // if the provided points are already less than or equal to the desired number of clusters
-    // we can simply return them as clusters
-    if (partitionList.length <= clusters.value)
+    if (partitionList.length <= numClusters.value)
       return partitionList
-        .map(a => Cluster(Array(a), Array(a), null, a))
+        .map(p => Cluster(Array(p), Array(p), null, p))
         .toIterator
 
     val kdTree: KDTree = createKDTree(partitionList)
     val cHeap: MinHeap = createHeap(partitionList, kdTree)
 
-    // if outlier filtering is enabled we set the number of clusters to the double of the default (order of 2)
-    // and filter the clusters when we have reached that number
     if (removeOutliers.value) {
-      computeClustersAtPartitions(clusters.value * 2, representatives.value, shrinkingFactor.value, kdTree, cHeap)
+      computeClustersAtPartitions(numClusters.value * 2, numRepresentatives.value, shrinkingFactor.value, kdTree, cHeap)
       for (i <- 0 until cHeap.heapSize)
-        if (cHeap.getDataArray(i).representatives.length < representatives.value)
+        if (cHeap.getDataArray(i).representatives.length < numRepresentatives.value)
           cHeap.remove(i)
     }
-    // clustering computation will continue with the default number of clusters
-    computeClustersAtPartitions(clusters.value, representatives.value, shrinkingFactor.value, kdTree, cHeap)
+    computeClustersAtPartitions(numClusters.value, numRepresentatives.value, shrinkingFactor.value, kdTree, cHeap)
 
     cHeap.getDataArray
       .slice(0, cHeap.heapSize)
-      .map(cc => {
-        cc.points.foreach(_.cluster = null)
-        val reps = cc.representatives
-        Cluster(findMFarthestPoints(cc.points, cc.mean, representatives.value), reps, null, cc.mean, cc.squaredDistance)
+      .map(c => {
+        c.points.foreach(_.cluster = null)
+        val newCluster = Cluster(findMFarthestPoints(c.points, c.mean, numRepresentatives.value),
+          c.representatives,
+          null,
+          c.mean,
+          c.squaredDistance)
+        newCluster.representatives.foreach(_.cluster = newCluster)
+        newCluster
       }).toIterator
   }
 
-  // OK
   private def createKDTree(data: List[KDPoint]): KDTree = {
     val kdTree = KDTree(KDNode(data.head, null, null), data.head.dimensions.length)
     for (i <- 1 until data.length)
@@ -163,7 +148,6 @@ object CureAlgorithm {
     kdTree
   }
 
-  // OK
   private def createHeap(data: List[KDPoint], kdTree: KDTree) = {
     val cHeap = MinHeap(data.length)
     data.map(p => {
@@ -179,7 +163,7 @@ object CureAlgorithm {
   private def createHeapFromClusters(data: List[Cluster], kdTree: KDTree): MinHeap = {
     val cHeap = MinHeap(data.length)
     data.foreach(p => {
-      val (closest, distance) = getNearestCluster(p.representatives, kdTree)
+      val (closest, distance) = getNearestCluster(p, kdTree)
       p.nearest = closest
       p.squaredDistance = distance
       cHeap.insert(p)
@@ -189,103 +173,92 @@ object CureAlgorithm {
 
   private def computeClustersAtPartitions(numClusters: Int,
                                           numRepresentatives: Int,
-                                          shrinkf: Double,
+                                          sf: Double,
                                           kdTree: KDTree,
                                           cHeap: MinHeap): Unit = {
-    var i = 0
     while (cHeap.heapSize > numClusters) {
       val c1 = cHeap.takeHead()
       val nearest = c1.nearest
-      val c2 = mergeClusterWithPointsAndRep(c1, nearest, numRepresentatives, shrinkf)
+      val c2 = merge(c1, nearest, numRepresentatives, sf)
+
       c1.representatives.foreach(kdTree.delete)
       nearest.representatives.foreach(kdTree.delete)
-      val (newNearestCluster, nearestDistance) = getNearestCluster(c2.representatives, kdTree)
+
+      val (newNearestCluster, nearestDistance) = getNearestCluster(c2, kdTree)
       c2.nearest = newNearestCluster
       c2.squaredDistance = nearestDistance
       c2.representatives.foreach(kdTree.insert)
+
       removeClustersFromHeapUsingReps(kdTree, cHeap, c1, nearest)
-      if (i % 256 == 0) println(s"Processing and merging clusters from heap. Current Total Cluster size is ${cHeap.heapSize}")
-      i = i + 1
+
       cHeap.insert(c2)
     }
   }
 
-  private def removeClustersFromHeapUsingReps(kdTree: KDTree, cHeap: MinHeap, c1: Cluster, nearest: Cluster): Unit = {
-    val heapArray = cHeap.getDataArray
+  private def removeClustersFromHeapUsingReps(kdTree: KDTree, cHeap: MinHeap, cluster: Cluster, nearest: Cluster): Unit = {
     val heapSize = cHeap.heapSize
-    var it = 0
-    while (it < heapSize) {
-      var flag = false
-      val tmpCluster = heapArray(it)
-      val tmpNearest = tmpCluster.nearest
-      if (tmpCluster == nearest) {
-        cHeap.remove(it) //remove cluster
-        flag = true
+    var i = 0
+    while (i < heapSize) {
+      var continue = true
+      val currCluster = cHeap.getDataArray(i)
+      val currNearest = currCluster.nearest
+      if (currCluster == nearest) {
+        cHeap.remove(i)
+        continue = false
       }
-      if (tmpNearest == nearest || tmpNearest == c1) {
-        val (newCluster, newDistance) = getNearestCluster(tmpCluster.representatives, kdTree)
-        tmpCluster.nearest = newCluster
-        tmpCluster.squaredDistance = newDistance
-        cHeap.heapify(it)
-        flag = true
+      if (currNearest == nearest || currNearest == cluster) {
+        val (newCluster, newDistance) = getNearestCluster(currCluster, kdTree)
+        currCluster.nearest = newCluster
+        currCluster.squaredDistance = newDistance
+        cHeap.heapify(i)
+        continue = false
       }
-      if (!flag) it = it + 1
+      if (continue) i += 1
     }
   }
 
-
-  private def getNearestCluster(points: Array[KDPoint], kdTree: KDTree): (Cluster, Double) = {
-    val (point, distance) = points.foldLeft(points(0), Double.MaxValue) {
-      case ((nearestPoint, newD), rep) =>
-        val closest = kdTree.closestPointOfOtherCluster(rep)
-        val d = rep.squaredDistance(closest)
-        if (d < newD) (closest, d)
-        else (nearestPoint, newD)
-    }
-    (point.cluster, distance)
+  private def getNearestCluster(cluster: Cluster, kdTree: KDTree): (Cluster, Double) = {
+    val (nearestRep, nearestDistance) = cluster
+      .representatives
+      .foldLeft(null: KDPoint, Double.MaxValue) {
+        case ((currNearestRep, currNearestDistance), rep) =>
+          val nearestRep = kdTree.closestPointOfOtherCluster(rep)
+          val nearestDistance = rep.squaredDistance(nearestRep)
+          if (nearestDistance < currNearestDistance)
+            (nearestRep, nearestDistance)
+          else
+            (currNearestRep, currNearestDistance)
+      }
+    (nearestRep.cluster, nearestDistance)
   }
 
-  // OK
   def copyPointsArray(oldArray: Array[KDPoint]): Array[KDPoint] = {
     oldArray
       .clone()
-      .map(x => {
-        if (x == null)
+      .map(p => {
+        if (p == null)
           return null
-        KDPoint(x.dimensions.clone())
+        KDPoint(p.dimensions.clone())
       })
   }
 
-  def mergeClusterAndPoints(c1: Cluster, nearest: Cluster): Cluster = {
-    val mergedPoints = c1.points ++ nearest.points
+  private def merge(cluster: Cluster, nearest: Cluster, repCount: Int, sf: Double): Cluster = {
+    val mergedPoints = cluster.points ++ nearest.points
     val mean = meanOfPoints(mergedPoints)
-    val newCluster = Cluster(mergedPoints, null, null, mean)
-    mergedPoints.foreach(_.cluster = newCluster)
-    mean.cluster = newCluster
-    newCluster
-  }
+    var representatives = mergedPoints
+    if (mergedPoints.length > repCount)
+      representatives = findMFarthestPoints(mergedPoints, mean, repCount)
+    representatives = shrinkRepresentativeArray(sf, representatives, mean)
 
-  private def mergeClusterWithPointsAndRep(c1: Cluster, nearest: Cluster, repCount: Int, sf: Double): Cluster = {
-
-    val mergedPoints = c1.points ++ nearest.points
-    val mean = meanOfPoints(mergedPoints)
-
-    val mergedCl = {
-      if (mergedPoints.length <= repCount)
-        Cluster(mergedPoints, shrinkRepresentativeArray(sf, mergedPoints, mean), null, mean)
-      else {
-        val tmpArray = findMFarthestPoints(mergedPoints, mean, repCount)
-        Cluster(mergedPoints, shrinkRepresentativeArray(sf, tmpArray, mean), null, mean)
-      }
-    }
+    val mergedCl = Cluster(mergedPoints, representatives, null, mean)
 
     mergedCl.representatives.foreach(_.cluster = mergedCl)
     mergedCl.points.foreach(_.cluster = mergedCl)
     mergedCl.mean.cluster = mergedCl
+
     mergedCl
   }
 
-  // OK
   private def findMFarthestPoints(points: Array[KDPoint], mean: KDPoint, m: Int): Array[KDPoint] = {
     val tmpArray = new Array[KDPoint](m)
     for (i <- 0 until m) {
@@ -318,13 +291,9 @@ object CureAlgorithm {
     tmpArray.filter(_ != null)
   }
 
-
-  // OK
   private def shrinkRepresentativeArray(sf: Double, repArray: Array[KDPoint], mean: KDPoint): Array[KDPoint] = {
     val tmpArray = copyPointsArray(repArray)
     tmpArray.foreach(rep => {
-      if (rep == null)
-        return null
       val repDim = rep.dimensions
       repDim.indices
         .foreach(i => repDim(i) += (mean.dimensions(i) - repDim(i)) * sf)
@@ -332,7 +301,6 @@ object CureAlgorithm {
     tmpArray
   }
 
-  // OK
   def meanOfPoints(points: Array[KDPoint]): KDPoint = {
     KDPoint(points
       .filter(_ != null)

@@ -1,7 +1,7 @@
 package clustering.cure
 
-case class CureArgs(clusters: Int,
-                    representatives: Int,
+case class CureArgs(numClusters: Int,
+                    numRepresentatives: Int,
                     shrinkingFactor: Double,
                     partitions: Int,
                     inputFile: String,
@@ -11,9 +11,9 @@ case class CureArgs(clusters: Int,
   validateArgs()
 
   private def validateArgs(): Unit = {
-    if (clusters < 1)
+    if (numClusters < 1)
       throw new Exception("Number of clusters should be larger than or equal to 1.")
-    if (representatives <= 1)
+    if (numRepresentatives <= 1)
       throw new Exception("Please specify a positive integer value >1 for the number of representatives in a clusters")
     if (shrinkingFactor < 0 || shrinkingFactor > 1)
       throw new Exception("Attribute shrinking factor must be between and not including 0 and 1.")
@@ -22,8 +22,8 @@ case class CureArgs(clusters: Int,
     if (samplingRatio < 0 || samplingRatio > 1)
       throw new Exception("Sampling ratio should between and not including 0 and 1.")
     println(s"Attributes for the CURE Algorithm:\n" +
-      s"  Number of clusters:${clusters}\n" +
-      s"  Number of representatives:${representatives}\n" +
+      s"  Number of clusters:${numClusters}\n" +
+      s"  Number of representatives:${numRepresentatives}\n" +
       s"  Shrinking Factor:${shrinkingFactor}\n" +
       s"  Number of partitions:${partitions}\n" +
       s"  Sampling ratio:${samplingRatio}")

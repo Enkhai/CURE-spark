@@ -47,7 +47,6 @@ object Cure {
     finally
       writer.close()
 
-    println("Job Completed Successfully")
     sc.stop()
   }
 }
