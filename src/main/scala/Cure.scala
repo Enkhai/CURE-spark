@@ -20,7 +20,7 @@ object Cure {
 
     val currentDir = System.getProperty("user.dir")
     val inputDir = "file://" + currentDir + "/datasets/data_size2/data1.txt"
-    val outputDir = "file://" + currentDir + "/output"
+    val outputDir = "file://" + currentDir + "/cureOutput"
 
     val cureArgs = CureArgs(10, 10, 0.3, 4, inputDir, 0.4, removeOutliers = true)
 

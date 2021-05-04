@@ -116,8 +116,8 @@ object CureAlgorithm {
         .map(p => Cluster(Array(p), Array(p), null, p))
         .toIterator
 
-    val kdTree: KDTree = createKDTree(partitionList)
-    val cHeap: MinHeap = createHeap(partitionList, kdTree)
+    val kdTree = createKDTree(partitionList)
+    val cHeap = createHeap(partitionList, kdTree)
 
     if (removeOutliers.value) {
       computeClustersAtPartitions(numClusters.value * 2, numRepresentatives.value, shrinkingFactor.value, kdTree, cHeap)

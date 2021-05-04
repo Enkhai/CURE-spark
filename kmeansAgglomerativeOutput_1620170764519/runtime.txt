@@ -1,0 +1,2 @@
+Total time taken for computing KMeans predictions: 6.914
+Total time taken for computing Agglomerative clustering predictions: 128.774
