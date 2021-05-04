@@ -1,7 +1,7 @@
 package clustering.structures
 
 case class KDPoint(dimensions: Array[Double],
-                 var cluster: Cluster = null) {
+                   var cluster: Cluster = null) {
 
   def distance(p: KDPoint): Double = {
     Math.sqrt(squaredDistance(p))
@@ -13,10 +13,15 @@ case class KDPoint(dimensions: Array[Double],
     d1.indices.foldLeft(0.0d) { (l, r) => l + Math.pow(d1(r) - d2(r), 2) }
   }
 
-  override def equals(obj: scala.Any): Boolean = {
-    !obj.asInstanceOf[KDPoint].dimensions.indices.exists(i => this.dimensions(i) != obj.asInstanceOf[KDPoint].dimensions(i))
+  override def equals(other: scala.Any): Boolean = {
+    !other
+      .asInstanceOf[KDPoint]
+      .dimensions
+      .indices
+      .exists(i => this.dimensions(i) != other.asInstanceOf[KDPoint].dimensions(i))
   }
 
-  override def toString: String = dimensions.toList.toString()
+  override def toString: String =
+    dimensions.toList.toString()
 }
 

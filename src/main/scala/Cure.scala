@@ -19,12 +19,12 @@ object Cure {
     val sc = new SparkContext(sparkConf)
 
     val currentDir = System.getProperty("user.dir")
-    val inputDir = "file://" + currentDir + "/datasets/data_size1/output2.txt"
+    val inputDir = "file://" + currentDir + "/datasets/data_size2/data1.txt"
     val outputFile = "file://" + currentDir + "/output"
 
     val startTime = System.currentTimeMillis()
 
-    val cureArgs = CureArgs(0.95, 10, 10, 0.3, 4, inputDir, 0.1, removeOutliers = true)
+    val cureArgs = CureArgs(10, 10, 0.3, 4, inputDir, 0.1, removeOutliers = true)
     val result = CureAlgorithm.start(cureArgs, sc)
 
     val resultFile = outputFile + "_" + new Date().getTime.toString

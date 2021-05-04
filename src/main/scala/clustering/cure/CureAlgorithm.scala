@@ -9,10 +9,13 @@ object CureAlgorithm {
   def start(cureArgs: CureArgs, sparkContext: SparkContext): RDD[String] = {
 
     val file = cureArgs.inputFile
-    validateArgs(cureArgs, file)
 
-    val sparkConf = sparkContext.getConf
-    println(s"SPARK CONFIGS are ${sparkConf.getAll.mkString("", ", ", "")}")
+    println(s"SPARK CONFIGS are ${
+      sparkContext
+        .getConf
+        .getAll
+        .mkString("", ", ", "")
+    }")
     val broadcastK = sparkContext.broadcast(cureArgs.clusters)
     val broadcastM = sparkContext.broadcast(cureArgs.representatives)
     val broadcastRemoveOutliers = sparkContext.broadcast(cureArgs.removeOutliers)
@@ -20,25 +23,19 @@ object CureAlgorithm {
     val broadcastSf = sparkContext.broadcast(sf)
     val distFile = sparkContext.textFile(file)
     val size = distFile.count()
-    val n = 5050 * Math.log(2 / (1 - cureArgs.confidence))
     val m = cureArgs.representatives
-    println(s"Size of input file $file is $size and samples needed is $n")
+    println(s"Size of input file $file is $size")
 
-    val tmp = Math.max(cureArgs.samplingRatio, 0.1)
-    val samplingR = if (n / size > 1) 1 else Math.max(tmp, n / size)
-
-
-    println(s"The sampling fraction is $samplingR")
-
-    val topRecords = distFile.top(5)
-    val dimensions = topRecords.foldLeft(Integer.MAX_VALUE) { (min, curr) => {
-      val size = curr.split(",").length
-      if (size < min) size else min
-    }
-    }
+    val dimensions = distFile
+      .top(1)
+      .head
+      .split(",")
+      .length
     println(s"Sensed the records in data have $dimensions dimensions")
     val broadcastDimen = sparkContext.broadcast(dimensions)
-    val sample = distFile.sample(withReplacement = false, fraction = samplingR).repartition(cureArgs.partitions)
+    val sample = distFile
+      .sample(withReplacement = false, fraction = cureArgs.samplingRatio)
+      .repartition(cureArgs.partitions)
     println(s"The total size is $size and sampled count is ${sample.count()}")
 
     val points: RDD[KDPoint] = sample.map(a => {
@@ -55,8 +52,7 @@ object CureAlgorithm {
       val numClusters = if (removeOutliers) broadcastK.value * 2 else broadcastK.value
 
       if (data.lengthCompare(numClusters) > 0) {
-        val first = data.head
-        val kdTree: KDTree = createKDTree(data, first)
+        val kdTree: KDTree = createKDTree(data)
         println("Created Kd Tree in partition")
         val cHeap: MinHeap = createHeap(data, kdTree)
 
@@ -80,14 +76,14 @@ object CureAlgorithm {
     )
 
     val cureClusters = clusters.collect()
-    println(s"Partitioned Execution finished Sucessfully. Collected all ${cureClusters.length} clusters at driver")
+    println(s"Partitioned Execution finished Successfully. Collected all ${cureClusters.length} clusters at driver")
 
     cureClusters.foreach(c => c.representatives.foreach(a => {
       if (a != null) a.cluster = c
     }))
 
     val reducedPoints = cureClusters.flatMap(_.representatives).toList
-    val kdTree: KDTree = createKDTree(reducedPoints, reducedPoints.head)
+    val kdTree: KDTree = createKDTree(reducedPoints)
     val cHeap: MinHeap = createHeapFromClusters(cureClusters.toList, kdTree)
 
     var clustersShortOfMReps = if (cureArgs.removeOutliers) cureClusters.count(_.representatives.length < m) else 0
@@ -118,7 +114,7 @@ object CureAlgorithm {
       cHeap.insert(c2)
       println(s"Processing and merging clusters. Heap size is :: ${cHeap.heapSize}")
     }
-    println(s"Merged clusters at driver. Total clusters ${cHeap.heapSize} Removed $clustersShortOfMReps clusters without $m repsenentatives")
+    println(s"Merged clusters at driver. Total clusters ${cHeap.heapSize} Removed $clustersShortOfMReps clusters without $m representatives")
     val finalClusters = cHeap.getDataArray.slice(0, cHeap.heapSize).filter(_.representatives.length >= m)
     finalClusters.zipWithIndex.foreach { case (x, i) => x.id = i }
     println("Final Representatives")
@@ -152,16 +148,6 @@ object CureAlgorithm {
       i = i + 1
       cHeap.insert(c2)
     }
-  }
-
-  private def validateArgs(args: CureArgs, file: String): Unit = {
-    if (args.confidence - 1 >= 0) throw new Exception("Attribute confidence must be between and not including 0 and 1")
-    if (args.shrinkingFactor - 0.99 >= 0) throw new Exception("Attribute shrinking factor must be between and not including 0 and 0.99")
-    if (args.clusters < 0) throw new Exception("Please specify a positive integer value for the number of cluster")
-    if (args.partitions < 0 || args.partitions > 100) throw new Exception("Please specify a positive integer value between 1 to 100 for the number of partitions")
-    if (args.representatives <= 1) throw new Exception("Please specify a positive integer value >1 for the number of representatives in a clusters")
-    println(s"Attributes for CURE Algorithm are:: Confidence:${args.confidence}  Number of clusters:${args.clusters}  Number of Representatives:${args.representatives}  Shrinking Factor:${args.shrinkingFactor}  Number of partitions:${args.partitions} Sampling:${args.samplingRatio}")
-    println(s"Reading data for Cure Algo from path $file")
   }
 
   private def removeClustersFromHeapUsingReps(kdTree: KDTree, cHeap: MinHeap, c1: Cluster, nearest: Cluster): Unit = {
@@ -210,11 +196,10 @@ object CureAlgorithm {
     cHeap
   }
 
-  private def createKDTree(data: List[KDPoint], first: KDPoint): KDTree = {
-    val kdTree = KDTree(KDNode(first, null, null), first.dimensions.length)
-    for (i <- 1 until data.length - 1) {
+  private def createKDTree(data: List[KDPoint]): KDTree = {
+    val kdTree = KDTree(KDNode(data.head, null, null), data.head.dimensions.length)
+    for (i <- 1 until data.length)
       kdTree.insert(data(i))
-    }
     kdTree
   }
 
@@ -230,12 +215,13 @@ object CureAlgorithm {
   }
 
   def copyPointsArray(oldArray: Array[KDPoint]): Array[KDPoint] = {
-    val newArray = new Array[KDPoint](oldArray.length)
-    newArray.indices.foreach(i => {
-      if (oldArray(i) == null) newArray(i) = null
-      else newArray(i) = KDPoint(oldArray(i).dimensions.clone())
-    })
-    newArray
+    oldArray
+      .clone()
+      .map(x => {
+        if (x == null)
+          return null
+        KDPoint(x.dimensions.clone())
+      })
   }
 
   def mergeClusterAndPoints(c1: Cluster, nearest: Cluster): Cluster = {
@@ -332,23 +318,22 @@ object CureAlgorithm {
   private def shrinkRepresentativeArray(sf: Double, tmpArray: Array[KDPoint], mean: KDPoint): Array[KDPoint] = {
     val repArray = copyPointsArray(tmpArray)
     repArray.foreach(rep => {
-      if (rep != null) {
-        val repDim = rep.dimensions
-        repDim.indices.foreach(i => repDim(i) = repDim(i) + (mean.dimensions(i) - repDim(i)) * sf)
-      }
+      if (rep == null)
+        return null
+      val repDim = rep.dimensions
+      repDim.indices
+        .foreach(i => repDim(i) += (mean.dimensions(i) - repDim(i)) * sf)
     })
     repArray
   }
 
   def meanOfPoints(points: Array[KDPoint]): KDPoint = {
-
-    val len = points(0).dimensions.length
-    val newArray = new Array[Double](len)
-    points.filter(_ != null).foreach(p => {
-      val d = p.dimensions
-      d.indices.foreach(i => newArray(i) += d(i))
-    })
-    newArray.indices.foreach(j => newArray(j) = newArray(j) / points.length)
-    KDPoint(newArray)
+    KDPoint(points
+      .filter(_ != null)
+      .map(_.dimensions)
+      .transpose
+      .map(x => {
+        x.sum / x.length
+      }))
   }
 }
