@@ -1,6 +1,6 @@
 /project/target
 /target
 .idea
-*output*/
+*Output*/
 .ipynb_checkpoints
 .jovianrc
