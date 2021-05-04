@@ -20,31 +20,34 @@ object Cure {
 
     val currentDir = System.getProperty("user.dir")
     val inputDir = "file://" + currentDir + "/datasets/data_size2/data1.txt"
-    val outputFile = "file://" + currentDir + "/output"
+    val outputDir = "file://" + currentDir + "/output"
+
+    val cureArgs = CureArgs(10, 10, 0.3, 4, inputDir, 0.4, removeOutliers = true)
 
     val startTime = System.currentTimeMillis()
-
-    val cureArgs = CureArgs(10, 10, 0.3, 4, inputDir, 0.1, removeOutliers = true)
-    val result = CureAlgorithm.start(cureArgs, sc)
-
-    val resultFile = outputFile + "_" + new Date().getTime.toString
-    result.saveAsTextFile(resultFile)
+    val result = CureAlgorithm.start(cureArgs, sc).cache()
     val endTime = System.currentTimeMillis()
+
+    val text = s"Total time taken to assign clusters is : ${((endTime - startTime) * 1.0) / 1000} seconds"
+    println(text)
+
+    val resultFile = outputDir + "_" + new Date().getTime.toString
+    result.map(x =>
+      x._1
+        .mkString(",")
+        .concat(s",${x._2}")
+    ).saveAsTextFile(resultFile)
+
     val conf = new Configuration()
     val fs = FileSystem.get(conf)
     val output = fs.create(new Path(s"$resultFile/runtime.txt"))
     val writer = new PrintWriter(output)
-    val text = s"Total time taken to assign clusters is : ${((endTime - startTime) * 1.0) / 1000} seconds"
-    println(text)
-    try {
+    try
       writer.write(text)
-      writer.write(System.lineSeparator())
-    }
     finally
       writer.close()
 
-    print(System.lineSeparator() + "Job Completed Successfully")
-
+    println("Job Completed Successfully")
     sc.stop()
   }
 }

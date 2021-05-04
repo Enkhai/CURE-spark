@@ -1,6 +1,8 @@
+import clustering.structures.{Cluster, KDPoint}
 import org.apache.log4j._
 import org.apache.spark.mllib.clustering.KMeans
 import org.apache.spark.mllib.linalg.Vectors
+import org.apache.spark.rdd.RDD.rddToPairRDDFunctions
 import org.apache.spark.{SparkConf, SparkContext}
 
 object KMeansComparison {
@@ -15,37 +17,49 @@ object KMeansComparison {
     val sc = new SparkContext(sparkConf)
 
     val currentDir = System.getProperty("user.dir")
-    val inputDir = "file://" + currentDir + "/datasets/data_size1"
+    val inputDir = "file://" + currentDir + "/datasets/data_size2/data1.txt"
     val outputDir = "file://" + currentDir + "/output"
 
-    val parsedData = sc.textFile(inputDir).map(s => Vectors.dense(s.split(',').map(_.toDouble))).cache()
+    val parsedData = sc.textFile(inputDir)
+      .map(s => Vectors.dense(s.split(',').map(_.toDouble)))
+      .cache()
 
-    // Cluster the data into two classes using KMeans
-    val numClusters = 2
-    val numIterations = 20
-    val clusters = KMeans.train(parsedData, numClusters, numIterations)
+    val numClusters = 40
+    val maxIterations = 100
+    val model = KMeans.train(parsedData, numClusters, maxIterations)
 
-    // Evaluate clustering by computing Within Set Sum of Squared Errors
-    val WSSSE = clusters.computeCost(parsedData)
+    val WSSSE = model.computeCost(parsedData)
     println(s"Within Set Sum of Squared Errors = $WSSSE")
 
-    val predictions = clusters.predict(parsedData)
-    predictions.collect()
+    val predictions = model.predict(parsedData)
+
+    val mappedPredictions = predictions
+      .zipWithIndex()
+      .map(x => (x._2.toInt, x._1))
+    val mappedData = parsedData
+      .zipWithIndex()
+      .map(x => (x._2.toInt, x._1))
+
+    val dataWithPrediction = mappedData.join(mappedPredictions)
+      .map(_._2)
+    val clusters = dataWithPrediction.groupBy(_._2)
+      .map(x => {
+        val points = x._2
+          .toArray
+          .map(y => KDPoint(y._1.toArray))
+        val cluster = Cluster(
+          points,
+          null,
+          null,
+          null,
+          id = x._1)
+        points.foreach(_.cluster = cluster)
+        cluster
+      }
+      ).collect()
+      .toList
 
 
-    // Save and load model
-    clusters.save(sc, outputDir)
-    // Export to PMML to a String in PMML format
-    //println(s"PMML Model:\n ${clusters.toPMML}")
-
-    // Export the model to a local file in PMML format
-    //clusters.toPMML(outputDir+"//kmeans.xml")
-
-    // Export the model to a directory on a distributed file system in PMML format
-    //clusters.toPMML(sc, outputDir+"//kmeans")
-
-    // Export the model to the OutputStream in PMML format
-    clusters.toPMML(System.out)
 
     sc.stop()
   }
