@@ -1,0 +1,6 @@
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 20 products, 10 sources, 5 libraries[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/clustering/cure/CureArgs.scala, ${BASE}/src/main/scala/clustering/structures/KDPoint.scala, ${BASE}/src/main/scala/Kmeans.scala, ${BASE}/src/main/scala/clustering/cure/CureAlgorithm.scala, ${BASE}/src/main/scala/clustering/structures/Cluster.scala, ${BASE}/src/main/scala/clustering/structures/KDTree.scala, ${BASE}/src/main/scala/Cure.scala, ${BASE}/src/main/scala/clustering/structures/KDNode.scala, ${BASE}/src/main/scala/clustering/structures/MinHeap.scala, ${BASE}/src/main/scala/bi-kmeans.scala)[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0mNo changes[0m[0J

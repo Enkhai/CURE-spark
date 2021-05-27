@@ -1,0 +1,9 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(collectAnalyses, None, Some(CommandSource(network-2)))[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":4,"message":"Processing"})[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / collectAnalyses[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: bloop.integrations.sbt.Offloader$$anon$1@7e0883f3, check cycles: false, forcegc: true[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0manalysis location (C:\Users\gmixo\Desktop\Will-Karas\target\scala-2.12\zinc\inc_compile_2.12.zip,true)[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m[0J
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 1 s, completed 26 Μαϊ 2021 3:24:06 πμ[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":4,"message":"Done"})[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m[0J

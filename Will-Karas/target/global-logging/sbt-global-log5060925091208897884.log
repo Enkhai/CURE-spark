@@ -1,0 +1,8 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(0ae9b035-2da0-491b-9684-f43ec8b1b378), Some(CommandSource(console0)))[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: bloop.integrations.sbt.Offloader$$anon$1@54be6213, check cycles: false, forcegc: true[0m[0J
+[0m[[0m[0minfo[0m] [0m[0mcompiling 2 Scala sources to C:\Users\gmixo\Desktop\Will-Karas\target\scala-2.12\classes ...[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m[0J
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 21 s, completed 27 Μαϊ 2021 3:28:10 πμ[0m[0J
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m[0J
+[0m[[0m[31merror[0m] [0m[0mserver failed to start on local:sbt-server-133819dc58a26650ef02. java.io.IOException: Could not create lock for \\.\pipe\sbt-server-133819dc58a26650ef02_lock, error 5[0m[0J
