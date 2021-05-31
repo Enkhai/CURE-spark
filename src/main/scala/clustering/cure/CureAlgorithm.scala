@@ -5,9 +5,12 @@ import org.apache.spark.SparkContext
 import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.rdd.RDD
 
+import scala.collection.mutable.ArrayBuffer
+
 object CureAlgorithm {
 
-  def start(cureArgs: CureArgs, sparkContext: SparkContext): RDD[(Array[Double], Int)] = {
+  def start(cureArgs: CureArgs, sparkContext: SparkContext):
+  (RDD[(Array[Double], Int)], Array[(Array[Double], Int)], Array[(Array[Double], Int)]) = {
 
     val distFile = sparkContext.textFile(cureArgs.inputFile)
       .map(_
@@ -83,15 +86,8 @@ object CureAlgorithm {
     finalClusters.zipWithIndex
       .foreach { case (x, i) => x.id = i }
 
-    println("Final Representatives")
-    finalClusters
-      .foreach(c =>
-        c.representatives
-          .foreach(r => println(s"$r , ${c.id}"))
-      )
-
     val broadcastTree = sparkContext.broadcast(kdTree)
-    distFile.mapPartitions(partition => {
+    val result = distFile.mapPartitions(partition => {
       partition.map(p => {
         (p, broadcastTree.value
           .closestPointOfOtherCluster(KDPoint(p))
@@ -99,6 +95,20 @@ object CureAlgorithm {
           .id)
       })
     })
+
+    val finalRepresentatives = new ArrayBuffer[(Array[Double], Int)]
+    val finalMeans = new ArrayBuffer[(Array[Double], Int)]
+    finalClusters.foreach(c => {
+      c.representatives.foreach(r => {
+        finalRepresentatives += ((r.dimensions, c.id))
+      })
+      finalMeans += ((c.mean.dimensions, c.id))
+    })
+
+    println("Final Representatives")
+    finalRepresentatives.foreach(r => println(s"(${r._1.mkString(",")}), ${r._2}"))
+
+    (result, finalRepresentatives.toArray, finalMeans.toArray)
   }
 
   private def cluster(partition: Iterator[KDPoint],
