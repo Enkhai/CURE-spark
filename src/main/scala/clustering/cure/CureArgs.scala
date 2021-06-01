@@ -13,8 +13,8 @@ case class CureArgs(numClusters: Int,
   private def validateArgs(): Unit = {
     if (numClusters < 1)
       throw new Exception("Number of clusters should be larger than or equal to 1.")
-    if (numRepresentatives <= 1)
-      throw new Exception("Please specify a positive integer value >1 for the number of representatives in a clusters")
+    if (numRepresentatives <= 0)
+      throw new Exception("Please specify a positive integer value > 0 for the number of representatives in a clusters")
     if (shrinkingFactor < 0 || shrinkingFactor > 1)
       throw new Exception("Attribute shrinking factor must be between and not including 0 and 1.")
     if (partitions < 0 || partitions > 100)

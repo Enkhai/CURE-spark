@@ -1,0 +1,1 @@
+Total time taken to assign clusters is : 2.321 seconds

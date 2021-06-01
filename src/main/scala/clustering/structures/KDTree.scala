@@ -134,7 +134,7 @@ case class KDTree(var root: KDNode, k: Int) {
         closerDistance(point,
           closestRec(node.right, point, depth + 1),
           best)
-      else if (point.squaredDistance(best.point) > Math.abs(point.dimensions(axis)) - node.point.dimensions(axis))
+      else if (point.squaredDistance(best.point) > Math.pow(point.dimensions(axis) - node.point.dimensions(axis), 2))
         closerDistance(point,
           closestRec(node.right, point, depth + 1),
           best)
