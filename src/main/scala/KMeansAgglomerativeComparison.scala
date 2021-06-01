@@ -11,7 +11,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 import java.io.PrintWriter
 import java.util.Date
 
-object KMeansComparison {
+object KMeansAgglomerativeComparison {
 
   def main(args: Array[String]): Unit = {
     Logger.getLogger("org.apache.spark.SparkContext").setLevel(Level.WARN)
@@ -43,25 +43,13 @@ object KMeansComparison {
     val WSSSE = model.computeCost(parsedData)
     println(s"Within Set Sum of Squared Errors = $WSSSE")
 
-    val mappedPredictions = predictions
-      .zipWithIndex()
-      .map(x => (x._2.toInt, x._1))
-    val mappedData = parsedData
-      .zipWithIndex()
-      .map(x => (x._2.toInt, x._1))
+    val dataWithPrediction = parsedData.zipPartitions(predictions, preservesPartitioning = false)(
+      (x, y) => x.map(_.toArray).zip(y)
+    )
 
-    val dataWithPrediction = mappedData.join(mappedPredictions)
-      .map(_._2)
     val clusters = dataWithPrediction.groupBy(_._2)
-      .map(x => {
-        val points = x._2
-          .toArray
-          .map(y => KDPoint(y._1.toArray))
-        val cluster = Cluster(points, null, null, null, id = x._1)
-        points.foreach(_.cluster = cluster)
-        cluster
-      }
-      ).collect()
+      .map(x => x._2.toArray.map(_._1))
+      .collect()
 
     startTime = System.currentTimeMillis()
     val result = AgglomerativeAlgorithm.start(clusters, 5)
@@ -87,7 +75,7 @@ object KMeansComparison {
     val resultsTimeWriter = new PrintWriter(resultsOutput)
     try {
       for (r <- stringResults)
-        resultsTimeWriter.write(r)
+        resultsTimeWriter.println(r)
     } finally
       resultsTimeWriter.close()
 

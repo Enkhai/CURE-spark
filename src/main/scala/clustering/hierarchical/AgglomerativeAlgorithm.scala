@@ -1,93 +1,40 @@
 package clustering.hierarchical
 
-import clustering.structures._
-
 object AgglomerativeAlgorithm {
 
-  def start(initialClusters: Array[Cluster], k: Int): Array[(Array[Double], Int)] = {
-    val tree = createTree(initialClusters.flatMap(_.points))
-    val heap = createHeap(initialClusters, tree)
+  def start(initialClusters: Array[Array[Array[Double]]], k: Int): Array[(Array[Double], Int)] = {
 
-    while (heap.heapSize > k) {
-      val c1 = heap.takeHead()
-      val nearest = c1.nearest
-      val c2 = merge(c1, nearest)
+    var clusters = initialClusters.map(x => (x, new Array[Double](x(0).length)))
+      .toBuffer
 
-      val (newNearestCluster, nearestDistance) = getNearestCluster(c2, tree)
-      c2.nearest = newNearestCluster
-      c2.squaredDistance = nearestDistance
+    while (clusters.length > k) {
 
-      removeClustersFromHeap(tree, heap, c1, nearest)
+      clusters = clusters.map(x => (x._1, meanOfPoints(x._1)))
 
-      heap.insert(c2)
-      if (heap.heapSize % 20 == 0) println(s"${heap.heapSize} clusters remaining.")
+      val distances = clusters.map(x => clusters.map(y => squaredDistance(y._2, x._2)).zipWithIndex.toArray)
+      val minDistances = distances.map(x => x.filter(_._1 != 0).minBy(_._1))
+      val min = minDistances.zipWithIndex.minBy(x => x._1._1)
+
+      val newClusterPoints = clusters(min._1._2)._1 ++ clusters(min._2)._1
+      val newCluster = (newClusterPoints, meanOfPoints(newClusterPoints))
+
+      clusters.remove(min._1._2)
+      clusters.remove(min._2)
+
+      clusters.append(newCluster)
     }
 
-    heap.getDataArray
-      .slice(0, heap.heapSize)
-      .zipWithIndex
-      .flatMap(c => c._1.points.map(p => (p.dimensions, c._2)))
+    clusters.zipWithIndex
+      .flatMap(x => x._1._1.map(y => (y, x._2)))
+      .toArray
   }
 
-  private def createTree(points: Array[KDPoint]): KDTree = {
-    val tree = KDTree(KDNode(points.head, null, null), points.head.dimensions.length)
-    for (i <- 1 until points.length)
-      tree.insert(points(i))
-    tree
+  def meanOfPoints(points: Array[Array[Double]]): Array[Double] = {
+    points.transpose.
+      map(x => x.sum / x.length)
   }
 
-  private def createHeap(clusters: Array[Cluster], tree: KDTree): MinHeap = {
-    val heap = MinHeap(clusters.length)
-    clusters.foreach(c => {
-      val (nearestCluster, nearestDistance) = getNearestCluster(c, tree)
-      c.nearest = nearestCluster
-      c.squaredDistance = nearestDistance
-      heap.insert(c)
-    })
-    heap
-  }
-
-  private def getNearestCluster(cluster: Cluster, tree: KDTree): (Cluster, Double) = {
-    val (nearestRep, nearestDistance) = cluster
-      .points
-      .foldLeft(null: KDPoint, Double.MaxValue) {
-        case ((currNearestPoint, currNearestDistance), point) =>
-          val nearestPoint = tree.closestPointOfOtherCluster(point)
-          val nearestDistance = point.squaredDistance(nearestPoint)
-          if (nearestDistance < currNearestDistance)
-            (nearestPoint, nearestDistance)
-          else
-            (currNearestPoint, currNearestDistance)
-      }
-    (nearestRep.cluster, nearestDistance)
-  }
-
-  def merge(c1: Cluster, nearest: Cluster): Cluster = {
-    val mergedPoints = c1.points ++ nearest.points
-    val newCluster = Cluster(mergedPoints, null, null, null)
-    mergedPoints.foreach(_.cluster = newCluster)
-    newCluster
-  }
-
-  private def removeClustersFromHeap(kdTree: KDTree, cHeap: MinHeap, cluster: Cluster, nearest: Cluster): Unit = {
-    val heapSize = cHeap.heapSize
-    var i = 0
-    while (i < heapSize) {
-      var continue = true
-      val currCluster = cHeap.getDataArray(i)
-      val currNearest = currCluster.nearest
-      if (currCluster == nearest) {
-        cHeap.remove(i)
-        continue = false
-      }
-      if (currNearest == nearest || currNearest == cluster) {
-        val (newCluster, newDistance) = getNearestCluster(currCluster, kdTree)
-        currCluster.nearest = newCluster
-        currCluster.squaredDistance = newDistance
-        cHeap.heapify(i)
-        continue = false
-      }
-      if (continue) i += 1
-    }
+  def squaredDistance(p1: Array[Double], p2: Array[Double]): Double = {
+    p1.indices.foldLeft(0.0d) { (l, r) => l + Math.pow(p1(r) - p2(r), 2) }
   }
 }
