@@ -1,11 +1,9 @@
 import clustering.hierarchical.AgglomerativeAlgorithm
-import clustering.structures.{Cluster, KDPoint}
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.{FileSystem, Path}
 import org.apache.log4j._
 import org.apache.spark.mllib.clustering.KMeans
 import org.apache.spark.mllib.linalg.Vectors
-import org.apache.spark.rdd.RDD.rddToPairRDDFunctions
 import org.apache.spark.{SparkConf, SparkContext}
 
 import java.io.PrintWriter
