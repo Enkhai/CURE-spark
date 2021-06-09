@@ -21,18 +21,20 @@ object KMeansAgglomerativeComparison {
     val sc = new SparkContext(sparkConf)
 
     val currentDir = System.getProperty("user.dir")
-    val inputDir = "file://" + currentDir + "/datasets/data_size2/data1.txt"
+//    val inputDir = "file://" + currentDir + "/datasets/data_size2/data1.txt"
+    val inputDir = "file://" + currentDir + "/datasets/data2_10.txt"
     val outputDir = "file://" + currentDir + "/kmeansAgglomerativeOutput"
 
     val parsedData = sc.textFile(inputDir)
       .map(s => Vectors.dense(s.split(',').map(_.toDouble)))
       .cache()
 
-    val numClusters = 40
+    val initialClusters = 100
     val maxIterations = 100
+    val finalClusters = 10
 
     var startTime = System.currentTimeMillis()
-    val model = KMeans.train(parsedData, numClusters, maxIterations)
+    val model = KMeans.train(parsedData, initialClusters, maxIterations)
     val predictions = model.predict(parsedData)
     var endTime = System.currentTimeMillis()
 
@@ -50,7 +52,7 @@ object KMeansAgglomerativeComparison {
       .collect()
 
     startTime = System.currentTimeMillis()
-    val result = AgglomerativeAlgorithm.start(clusters, 5)
+    val result = AgglomerativeAlgorithm.start(clusters, finalClusters)
     endTime = System.currentTimeMillis()
 
     text += s"Total time taken for computing Agglomerative clustering predictions: " +

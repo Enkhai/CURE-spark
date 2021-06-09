@@ -20,13 +20,13 @@ object Cure {
 
     val currentDir = System.getProperty("user.dir")
 //    val inputDir = "file://" + currentDir + "/datasets/data2_10.txt"
-    val inputDir = "file://" + currentDir + "/datasets/data2_100.txt"
-//    val inputDir = "file://" + currentDir + "/datasets/data2_w_outliers.txt"
+//    val inputDir = "file://" + currentDir + "/datasets/data2_100.txt"
+    val inputDir = "file://" + currentDir + "/datasets/data2_10_w_outliers.txt"
 //    val inputDir = "file://" + currentDir + "/datasets/data_size2/data1.txt"
 //    val inputDir = "file://" + currentDir + "/datasets/data2_30_w_outliers.txt"
     val outputDir = "file://" + currentDir + "/cureOutput"
 
-    val cureArgs = CureArgs(5, 4, 0.5, 12, inputDir, 0.12, removeOutliers = false)
+    val cureArgs = CureArgs(10, 4, 0.5, 5, inputDir, 0.08, removeOutliers = true)
 
     val startTime = System.currentTimeMillis()
     val (result, representatives, means) = CureAlgorithm.start(cureArgs, sc)
