@@ -1,0 +1,7 @@
+parameter,value
+clusters,5.0
+representatives,4.0
+shrinking factor,0.5
+partitions,5.0
+sample size,8035.0
+total points,169240.0
