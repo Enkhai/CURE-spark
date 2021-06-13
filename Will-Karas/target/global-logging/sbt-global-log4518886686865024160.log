@@ -1,6 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(aa10091a-6a39-4b6d-9b64-0872f87bf5ec), Some(CommandSource(console0)))[0m[0J
-[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m[0J
-[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: bloop.integrations.sbt.Offloader$$anon$1@1d1c37d5, check cycles: false, forcegc: true[0m[0J
-[0m[[0m[32msuccess[0m] [0m[0mTotal time: 7 s, completed 27 Μαϊ 2021 3:28:39 πμ[0m[0J
-[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m[0J
-[0m[[0m[31merror[0m] [0m[0mserver failed to start on local:sbt-server-133819dc58a26650ef02. java.io.IOException: Could not create lock for \\.\pipe\sbt-server-133819dc58a26650ef02_lock, error 5[0m[0J
