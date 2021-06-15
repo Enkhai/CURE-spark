@@ -34,7 +34,7 @@ object KMeansAgglomerativeComparison {
     val finalClusters = 10
 
     var startTime = System.currentTimeMillis()
-    val model = KMeans.train(parsedData, initialClusters, maxIterations)
+    val model = KMeans.train(parsedData, initialClusters, maxIterations,initializationMode = "k-means||")
     val predictions = model.predict(parsedData)
     var endTime = System.currentTimeMillis()
 
